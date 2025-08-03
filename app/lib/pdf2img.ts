@@ -17,6 +17,7 @@ async function loadPdfJs(): Promise<any> {
     if (loadPromise) return loadPromise;
 
     // ✅ Load pdfjs-dist
+    // @ts-expect-error: no types for internal pdf.mjs
     loadPromise = import("pdfjs-dist/build/pdf.mjs").then((lib) => {
         // ✅ Tell pdfjs where to find the worker
         lib.GlobalWorkerOptions.workerSrc = pdfWorker;
