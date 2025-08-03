@@ -21,7 +21,7 @@ export default function Home() {
     if (!auth.isAuthenticated) {
       navigate("/auth?next=/");
     }
-  }, [auth.isAuthenticated, navigate]);
+  }, [auth.isAuthenticated]);
 
   return (
       <main className="bg-[url('/images/bg-main.svg')] bg-cover" role="main">
