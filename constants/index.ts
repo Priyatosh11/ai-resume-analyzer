@@ -225,7 +225,7 @@ export const AIResponseFormat = `
         }[]; //give 3-4 tips
       };
     }`;
-
+const today = new Date().toISOString().split('T')[0];
 export const prepareInstructions = ({
                                         jobTitle,
                                         jobDescription,
@@ -233,7 +233,8 @@ export const prepareInstructions = ({
     jobTitle: string;
     jobDescription: string;
 }) =>
-    `You are an expert in ATS (Applicant Tracking System) and resume analysis.
+    `Today’s date is: ${today}
+    You are an expert in ATS (Applicant Tracking System) and resume analysis.
   Please analyze and rate this resume and suggest how to improve it.
   The rating can be low if the resume is bad.
   Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
